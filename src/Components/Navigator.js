@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import Burger from "./Buger";
+import logo from "../assets/img/logo512_white.png";
 
 const Header = styled.header`
   position: fixed;
@@ -22,10 +23,9 @@ const LogoContainer = styled.div`
   justify-content: flex-start;
 `;
 const Logo = styled.div`
-  width: 16px;
-  height: 16px;
+  width: 20px;
+  height: 20px;
   margin-left: 10px;
-  margin-top: 1px;
   background-image: url(${(props) => props.img});
   background-size: contain;
   background-repeat: no-repeat;
@@ -36,15 +36,15 @@ const Logo = styled.div`
 const TextBox = styled.div`
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin-top: 0px;
-  margin-left: 15px;
-  font-size: 16px;
+  margin-top: 2.5px;
+  margin-left: 12px;
+  font-size: 14px;
 `;
 const Navigator = () => {
   return (
     <Header>
       <LogoContainer>
-        <Logo></Logo>
+        <Logo img={logo}></Logo>
         <TextBox>BANCO GAMES</TextBox>
       </LogoContainer>
       <Burger></Burger>
