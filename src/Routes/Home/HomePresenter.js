@@ -12,30 +12,40 @@ const Section1 = styled.div`
   width: 80%;
   height: 900px;
   background-color: salmon;
+
+  font-size: 30px;
 `;
 
 const Section2 = styled.div`
   width: 80%;
   height: 300px;
   background-color: tomato;
+
+  font-size: 30px;
 `;
 
 const Section3 = styled.div`
   width: 80%;
   height: 500px;
   background-color: dodgerblue;
+
+  font-size: 30px;
 `;
 
 const Section4 = styled.div`
   width: 80%;
   height: 500px;
   background-color: blueviolet;
+
+  font-size: 30px;
 `;
 
 const Section5 = styled.div`
   width: 80%;
   height: 500px;
   background-color: salmon;
+
+  font-size: 30px;
 `;
 
 const HomePresenter = () => {
