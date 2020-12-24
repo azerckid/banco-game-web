@@ -14,6 +14,10 @@ const Section1 = styled.div`
   background-color: salmon;
 
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Section2 = styled.div`
@@ -22,6 +26,10 @@ const Section2 = styled.div`
   background-color: tomato;
 
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Section3 = styled.div`
@@ -30,6 +38,10 @@ const Section3 = styled.div`
   background-color: dodgerblue;
 
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Section4 = styled.div`
@@ -38,6 +50,10 @@ const Section4 = styled.div`
   background-color: blueviolet;
 
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Section5 = styled.div`
@@ -46,6 +62,10 @@ const Section5 = styled.div`
   background-color: salmon;
 
   font-size: 30px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const HomePresenter = () => {
