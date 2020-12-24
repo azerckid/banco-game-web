@@ -47,6 +47,9 @@ const RightNav = ({ location: { pathname }, open }) => {
         <Item current={pathname === "/company"}>
           <Slink to="/company">COMPANY</Slink>
         </Item>
+        <Item current={pathname === "/about"}>
+          <Slink to="/about">ABOUT</Slink>
+        </Item>
         <Item style={{ color: "#c05c67", fontWeight: 600 }}>
           <Slink to="/"></Slink>
         </Item>

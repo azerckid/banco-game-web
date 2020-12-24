@@ -38,7 +38,7 @@ const TextBox = styled.div`
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   margin-top: 0px;
   margin-left: 15px;
-  font-size: 20px;
+  font-size: 16px;
 `;
 const Navigator = () => {
   return (
