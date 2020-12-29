@@ -15,6 +15,7 @@ const SvgTitleContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: black;
+  padding: 100px 0;
 `;
 
 const SvgTitle = styled.div`
