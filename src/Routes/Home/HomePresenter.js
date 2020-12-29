@@ -50,7 +50,7 @@ const StyledLogo = styled(ReactLogo)`
 const Section1 = styled.div`
   width: 80%;
   height: 900px;
-  background-color: salmon;
+  background-color: #ebc252;
 
   font-size: 30px;
 
@@ -111,7 +111,10 @@ const HomePresenter = () => {
     <Container>
       <SvgTitleContainer>
         <SvgTitle>
-          <StyledLogo primaryColor="black" secondaryColor="white"></StyledLogo>
+          <StyledLogo
+            primaryColor="#ebc252"
+            secondaryColor="white"
+          ></StyledLogo>
         </SvgTitle>
       </SvgTitleContainer>
 

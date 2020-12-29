@@ -23,8 +23,7 @@ const Item = styled.li`
   text-align: center;
   border-bottom: 3px solid
     ${(props) => (props.current ? "#c05c67" : "transparent")};
-  background-color: ${(props) =>
-    props.current ? "yellowgreen" : "transparent"};
+  background-color: ${(props) => (props.current ? "#ebc252" : "transparent")};
 
   transition: border-bottom 0.2s ease-in-out;
   cursor: pointer;
