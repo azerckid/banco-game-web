@@ -1,5 +1,6 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+import "./home.css";
 import { ReactComponent as ReactLogo } from "../../assets/img/BancoGamesLogoCircle.svg";
 
 const Container = styled.div`
@@ -13,13 +14,25 @@ const SvgTitleContainer = styled.div`
   width: 100vw;
   display: flex;
   justify-content: center;
-  background-color: brown;
+  background-color: black;
 `;
 
 const SvgTitle = styled.div`
   width: 70vw;
   padding: 100px;
-  background-color: brown;
+  background-color: black;
+`;
+
+const fade = (primaryColor, secondaryColor) => keyframes`
+0% {
+fill:${primaryColor};
+}
+50% {
+ fill:${secondaryColor};
+}
+100%{
+  fill:${primaryColor};
+}
 `;
 
 const StyledLogo = styled(ReactLogo)`
@@ -27,6 +40,10 @@ const StyledLogo = styled(ReactLogo)`
   width: 25rem;
   display: block;
   margin: auto;
+  .path {
+    animation: ${(props) => fade(props.primaryColor, props.secondaryColor)}
+      infinite 5s linear;
+  }
 `;
 
 const Section1 = styled.div`
@@ -57,7 +74,6 @@ const Section3 = styled.div`
   width: 80%;
   height: 500px;
   background-color: dodgerblue;
-
   font-size: 30px;
 
   @media (max-width: 768px) {
@@ -94,18 +110,7 @@ const HomePresenter = () => {
     <Container>
       <SvgTitleContainer>
         <SvgTitle>
-          <svg
-            id="Layer_1"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 92.25 92.25"
-          >
-            <polygon points="33.04 59.14 59.22 59.14 59.22 51.19 36.17 51.19 36.17 41.07 59.22 41.07 59.22 33.12 33.04 33.12 33.04 59.14" />
-            <path
-              d="M297.67,340.46a46.13,46.13,0,1,0,46.12,46.13A46.13,46.13,0,0,0,297.67,340.46ZM321,401.76a2.72,2.72,0,0,1-.65,1.45l-6.18,6a1.61,1.61,0,0,1-1.36.65H274.3V363.3h38.55a1.6,1.6,0,0,1,1.36.64l6.18,6a2.72,2.72,0,0,1,.65,1.45Z"
-              transform="translate(-251.54 -340.46)"
-            />
-          </svg>
+          <StyledLogo primaryColor="black" secondaryColor="white"></StyledLogo>
         </SvgTitle>
       </SvgTitleContainer>
 
