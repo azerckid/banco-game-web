@@ -1,5 +1,7 @@
 import React from "react";
 import styled, { keyframes } from "styled-components";
+
+import Intro from "../../Components/Pages/Intro";
 import "./home.css";
 import { ReactComponent as ReactLogo } from "../../assets/img/BancoGamesLogoCircle.svg";
 
@@ -109,6 +111,7 @@ const Section5 = styled.div`
 const HomePresenter = () => {
   return (
     <Container>
+      <Intro></Intro>
       <SvgTitleContainer>
         <SvgTitle>
           <StyledLogo
