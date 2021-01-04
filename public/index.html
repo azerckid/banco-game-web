@@ -55,53 +55,53 @@
       }
 
       var vertexShaderSrc = `
-attribute vec2 position;
+        attribute vec2 position;
 
-void main() {
-// position specifies only x and y.
-// We set z to be 0.0, and w to be 1.0
-gl_Position = vec4(position, 0.0, 1.0);
-}
+        void main() {
+        // position specifies only x and y.
+        // We set z to be 0.0, and w to be 1.0
+        gl_Position = vec4(position, 0.0, 1.0);
+        }
 `;
 
       var fragmentShaderSrc =
         `
-precision highp float;
+          precision highp float;
 
-const float WIDTH = ` +
+          const float WIDTH = ` +
         (width >> 0) +
         `.0;
-const float HEIGHT = ` +
+          const float HEIGHT = ` +
         (height >> 0) +
         `.0;
 
-uniform vec3 metaballs[` +
+          uniform vec3 metaballs[` +
         numMetaballs +
         `];
 
-void main(){
-float x = gl_FragCoord.x;
-float y = gl_FragCoord.y;
+          void main(){
+          float x = gl_FragCoord.x;
+          float y = gl_FragCoord.y;
 
-float sum = 0.0;
-for (int i = 0; i < ` +
+          float sum = 0.0;
+          for (int i = 0; i < ` +
         numMetaballs +
         `; i++) {
-vec3 metaball = metaballs[i];
-float dx = metaball.x - x;
-float dy = metaball.y - y;
-float radius = metaball.z;
+          vec3 metaball = metaballs[i];
+          float dx = metaball.x - x;
+          float dy = metaball.y - y;
+          float radius = metaball.z;
 
-sum += (radius * radius) / (dx * dx + dy * dy);
-}
+          sum += (radius * radius) / (dx * dx + dy * dy);
+          }
 
-if (sum >= 0.99) {
-gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 1.0), vec3(0, 0, 0), max(0.0, 1.0 - (sum - 0.99) * 100.0)), 1.0);
-return;
-}
+          if (sum >= 0.99) {
+          gl_FragColor = vec4(mix(vec3(x / WIDTH, y / HEIGHT, 1.0), vec3(0, 0, 0), max(0.0, 1.0 - (sum - 0.99) * 100.0)), 1.0);
+          return;
+          }
 
-gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
-}
+          gl_FragColor = vec4(0.0, 0.0, 0.0, 1.0);
+          }
 
 `;
 
