@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import styled, { keyframes } from "styled-components";
 
 import Intro from "../../Components/Pages/Intro";
@@ -108,7 +108,43 @@ const Section5 = styled.div`
   }
 `;
 
+const useScroll = () => {
+  const [state, setState] = useState({
+    x: 0,
+    y: 2,
+  });
+  const onScroll = (event) => {
+    setState({ y: window.scrollY });
+  };
+  useEffect(() => {
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  });
+
+  return state;
+};
+
+const useFadeIn = (duration = 1, delay = 0) => {
+  const element = useRef();
+  useEffect(() => {
+    if (element.current) {
+      const { current } = element;
+      current.style.transition = `opacity ${duration}s ease-in-out ${delay}s`;
+      current.style.opacity = 1;
+    }
+  }, []);
+  if (typeof duration !== "number") {
+    return;
+  }
+  return { ref: element, style: { opacity: 0 } };
+  // return element;
+};
+
 const HomePresenter = () => {
+  const { y } = useScroll();
+  const fadeInH1 = useFadeIn(4);
+  const fadeInP1 = useFadeIn(8, 4);
+
   return (
     <Container>
       <Intro></Intro>
@@ -121,7 +157,12 @@ const HomePresenter = () => {
         </SvgTitle>
       </SvgTitleContainer>
 
-      <Section1>
+      <Section1
+        style={{
+          color: y > 1500 ? "red" : "blue",
+          fontSize: y > 1500 ? 80 : 40,
+        }}
+      >
         <h1>Action Golf Title</h1>
         <p>액션골프 Typo와 캐릭터 이미지는 애니메이션</p>
       </Section1>
